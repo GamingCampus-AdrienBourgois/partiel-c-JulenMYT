@@ -6,6 +6,55 @@
 
 float Solution1::ConvertTemperature(float _value, TemperatureUnits _from, TemperatureUnits _to)
 {
+	float _newvalue;
+	if (_from == TemperatureUnits::CELSIUS)
+	{
+		if (_to == TemperatureUnits::CELSIUS)
+		{
+			_newvalue = _value;
+		}
+		else if (_to == TemperatureUnits::FAHRENHEIT)
+		{
+			_newvalue = _value * (9 / 5) + 32;
+		}
+		else if (_to == TemperatureUnits::KELVIN)
+		{
+			_newvalue = _value + 273;
+		}
+		return _newvalue;
+	}
+	if (_from == TemperatureUnits::KELVIN)
+	{
+		if (_to == TemperatureUnits::CELSIUS)
+		{
+			_newvalue = _value - 273;
+		}
+		else if (_to == TemperatureUnits::FAHRENHEIT)
+		{
+			_newvalue = (_value - 273) * (9 / 5) + 32;
+		}
+		else if (_to == TemperatureUnits::KELVIN)
+		{
+			_newvalue = _value;
+		}
+		return _newvalue;
+	}
+	if (_from == TemperatureUnits::FAHRENHEIT)
+	{
+		if (_to == TemperatureUnits::CELSIUS)
+		{
+			_newvalue = _value * (5 / 9) - 32;
+		}
+		else if (_to == TemperatureUnits::FAHRENHEIT)
+		{
+			_newvalue = _value;
+		}
+		else if (_to == TemperatureUnits::KELVIN)
+		{
+			_newvalue = (_value - 32) * (5 / 9) + 273;
+		}
+		return _newvalue;
+	}
 	return -1.0f;
 }
 
