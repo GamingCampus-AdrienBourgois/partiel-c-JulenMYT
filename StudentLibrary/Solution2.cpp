@@ -13,27 +13,23 @@ float Solution2::GetBalance(const std::string& accountName)
 {
 	std::ifstream account;
 	account.open(accountName);
+	std::string line;
 	float balance = 0;
+	float amount;
+
 	if (account.is_open())
 	{
-		for (std::string line; std::getline(account, line);)
-		{
-			std::istringstream in(line);
-			std::string type;
-			in >> type;            
-			float amount;
-			if (type == "WITHDRAW")
+		while(account >> line >> amount)
+		{          
+			if (line == "WITHDRAW")
 			{
-				in >> amount;
 				balance -= amount;
 			}
-			if (type == "DEPOSIT")
+			if (line == "DEPOSIT")
 			{
-				in >> amount;
 				balance += amount;
 			}
 		}
-		std::cout << balance;
 	}
 	return balance;
 }
