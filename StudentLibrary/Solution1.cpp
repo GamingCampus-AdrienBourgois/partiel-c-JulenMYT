@@ -15,14 +15,14 @@ float Solution1::ConvertTemperature(float _value, TemperatureUnits _from, Temper
 		}
 		else if (_to == TemperatureUnits::FAHRENHEIT)
 		{
-			_newvalue = _value * (9 / 5) + 32;
+			_newvalue = _value * (9.0 / 5.0) + 32;
 		}
 		else if (_to == TemperatureUnits::KELVIN)
 		{
 			_newvalue = _value + 273.15;
 		}
 	}
-	if (_from == TemperatureUnits::KELVIN)
+	else if (_from == TemperatureUnits::KELVIN)
 	{
 		if (_to == TemperatureUnits::CELSIUS)
 		{
@@ -30,18 +30,18 @@ float Solution1::ConvertTemperature(float _value, TemperatureUnits _from, Temper
 		}
 		else if (_to == TemperatureUnits::FAHRENHEIT)
 		{
-			_newvalue = (_value - 273.15) * (9 / 5) + 32;
+			_newvalue = (_value - 273.15) * (9.0 / 5.0) + 32;
 		}
 		else if (_to == TemperatureUnits::KELVIN)
 		{
 			_newvalue = _value;
 		}
 	}
-	if (_from == TemperatureUnits::FAHRENHEIT)
+	else if (_from == TemperatureUnits::FAHRENHEIT)
 	{
 		if (_to == TemperatureUnits::CELSIUS)
 		{
-			_newvalue = (_value - 32) * (5 / 9);
+			_newvalue = (_value - 32) * (5.0 / 9.0);
 		}
 		else if (_to == TemperatureUnits::FAHRENHEIT)
 		{
@@ -49,7 +49,7 @@ float Solution1::ConvertTemperature(float _value, TemperatureUnits _from, Temper
 		}
 		else if (_to == TemperatureUnits::KELVIN)
 		{
-			_newvalue = (_value - 32) * (5 / 9) + 273.15;
+			_newvalue = (_value - 32) * (5.0 / 9.0) + 273.15;
 		}
 	}
 	return _newvalue;
