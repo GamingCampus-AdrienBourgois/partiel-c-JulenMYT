@@ -20,7 +20,8 @@ int main(int argc, char** argv)
 	// You can test multiple exercices by calling multiple times the function AutograderRunTest
 	ExerciceBase::AutograderRunTest(0, 0);
 	ExerciceBase::AutograderRunTest(0, 1);
-
+	ExerciceBase::AutograderRunTest(1, 1);
+	
 	return 0;
 
 	/*------------------------------------ STUDENT MAIN ------------------------------------*/
